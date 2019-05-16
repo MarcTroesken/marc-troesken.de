@@ -61,10 +61,6 @@
  * @import "utilities/skew-transforms";
  */
 
-body {
-    color: #39140E;
-}
-
 .container-inner {
     padding-left: 1rem;
     padding-right: 1rem;
