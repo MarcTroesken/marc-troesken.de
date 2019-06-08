@@ -1,4 +1,4 @@
-# marc-troesken
+# marc-troesken.de
 
 > My wondrous Nuxt.js project
 
