@@ -61,6 +61,12 @@
  * @import "utilities/skew-transforms";
  */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .container-inner {
     padding-left: 1rem;
     padding-right: 1rem;

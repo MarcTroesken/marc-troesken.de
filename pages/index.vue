@@ -2,7 +2,7 @@
     <div>
         <section class="container-inner mx-auto flex flex-col sm:flex-row justify-between py-16 text-grey-darkest">
             <div class="text-4xl font-bold w-full sm:w-3/5 text-center sm:text-left">
-                <div>Full-stack web developer & Software Engineer</div>
+                <div>Full-stack web developer &amp; Software Engineer</div>
                 <div class="text-red">Welcome to my website</div>
             </div>
             <div class="mt-8 sm:mt-0 sm:w-2/5">

@@ -1,7 +1,7 @@
 {
   "name": "marc-troesken",
   "version": "1.0.0",
-  "description": "My wondrous Nuxt.js project",
+  "description": "Personal website of Marc Trösken. Passionate Web Developer",
   "author": "Marc Troesken",
   "private": true,
   "scripts": {
@@ -11,12 +11,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0"
+    "cross-env": "^5.2.1",
+    "nuxt": "^2.10.2"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.4",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.4",
     "tailwindcss": "^0.7.0"
   }
 }

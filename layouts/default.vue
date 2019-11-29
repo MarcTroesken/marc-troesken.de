@@ -2,8 +2,8 @@
     <div class="font-sans text-grey-dark leading-normal flex flex-col min-h-screen">
         <header class="border-t-14 border-red">
             <nav class="container mx-auto flex justify-between items-center py-8">
-                <a href="/">
-                    <img class="w-64 font-sans" src="@/assets/images/Troesken-Logo.svg" alt="Logo Marc Trösken">
+                <a class="no-underline text-grey-darkest" href="/">
+                    <h1 class="logo font-4xl"><span class="text-red lowercase leading-tight">Marc</span><span class="lowercase leading-tight">Tr&ouml;sken</span></h1>
                 </a>
                 <ul class="uppercase tracking-wide font-bold flex items-center list-reset">
                     <li class="mr-8">
