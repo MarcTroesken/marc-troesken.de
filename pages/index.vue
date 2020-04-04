@@ -9,11 +9,11 @@
                 <img class="mx-auto sm:mx-0" src="@/assets/images/coder.svg" alt="Coding Image">
             </div>
         </section>
-        
+
         <section class="container-inner mx-auto">
             <p class="text-xl text-red-darkest">
                 Hi there! I'm Marc. I love programming and developing web applications.
-                I enjoy working with <a class="no-underline text-red" href="https://laravel.com">Laravel PHP</a> and <a class="no-underline text-red" href="https://adonisjs.com/">Adonis JS</a> on backend projects, on the frontend 
+                I enjoy working with <a class="no-underline text-red" href="https://laravel.com">Laravel PHP</a> and <a class="no-underline text-red" href="https://adonisjs.com/">Adonis JS</a> on backend projects, on the frontend
                 I use <a class="no-underline text-red" href="https://vuejs.org/">Vue.js</a> and <a class="no-underline text-red" href="https://tailwindcss.com/">Tailwind CSS</a> for styling.
             </p>
             <div class="flex justify-between items-center py-16">
@@ -33,7 +33,7 @@
                     <img class="w-32 rounded-full mb-8 lg:mb-0" src="@/assets/images/me.jpg" alt="Avatar">
                 </div>
                 <div class="flex-1 text-lg sm:text-xl ml-6 text-red-darkest">
-                    So this is me. Marc. 32 years old. Living in Berlin, Germany. If you want to know me more, just get in touch ;)
+                    So this is me. Marc. 33 years old. Living in Erlangen, Germany. If you want to know me more, just get in touch ;)
                 </div>
             </div>
 
