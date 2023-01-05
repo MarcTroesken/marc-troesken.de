@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "cross-env": "^5.2.1",
-    "nuxt": "^2.10.2"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.4",
