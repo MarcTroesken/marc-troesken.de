@@ -2,4 +2,6 @@ services:
    app:
     build: .
     container_name: marc-troesken
+    ports:
+        - "9926:3000"
     restart: always
