@@ -2,7 +2,6 @@ services:
    app:
     build: .
     container_name: marc-troesken
-    ports:
     expose:
       - "80"
     restart: always
