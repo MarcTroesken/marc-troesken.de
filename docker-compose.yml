@@ -1,8 +1,5 @@
-version: "3"
 services:
    app:
     build: .
     container_name: marc-troesken
     restart: always
-    expose:
-      - "80"

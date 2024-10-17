@@ -1,23 +1,23 @@
 <template>
-    <div class="font-sans text-grey-dark leading-normal flex flex-col min-h-screen">
-        <header class="border-t-14 border-red">
+    <div class="font-sans text-gray-800 leading-normal flex flex-col min-h-screen">
+        <header class="border-t-14 border-red-500">
             <nav class="container mx-auto flex justify-between items-center py-8">
-                <a class="no-underline text-grey-darkest" href="/">
-                    <h1 class="logo font-4xl"><span class="text-red lowercase leading-tight">Marc</span><span class="lowercase leading-tight">Tr&ouml;sken</span></h1>
+                <a class="no-underline text-gray-800" href="/">
+                    <h1 class="logo text-3xl"><span class="text-red-600 lowercase leading-tight">Marc</span><span class="lowercase leading-tight">Tr&ouml;sken</span></h1>
                 </a>
                 <ul class="uppercase tracking-wide font-bold flex items-center list-reset">
                     <li class="mr-8">
-                        <a href="https://github.com/MarcTroesken" target="_blank" class="text-grey-darkest hover:text-grey-dark no-underline">Github</a>
+                        <a href="https://github.com/MarcTroesken" target="_blank" class="text-gray-800 hover:text-gray-300 no-underline">Github</a>
                     </li>
                 </ul>
             </nav>
         </header>
 
         <div class="flex-grow">
-            <nuxt />
+          <NuxtPage />
         </div>
 
-        <footer class="bg-red text-white">
+        <footer class="bg-red-600 text-white">
             <div class="container mx-auto flex items-center justify-between py-8">
                 <div>Copyright 2019. All rights reserved</div>
                 <ul class="list-reset flex items-center">
