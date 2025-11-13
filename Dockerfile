@@ -36,7 +36,7 @@ RUN npm install -g serve
 
 # Gebaute Dateien aus dem Builder übernehmen
 # Create React App: Output liegt in /app/build
-COPY --from=builder --chown=reactjs:nodejs /app/build /app/build
+COPY --from=builder --chown=reactjs:nodejs /app/dist /app/dist
 
 # Umgebungsvariablen
 ENV NODE_ENV=production
@@ -54,4 +54,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD node -e "require('http').get('http://localhost:3000/', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
 # App starten (serve: statischer Server für den Build-Ordner)
-CMD ["serve", "-s", "build", "-l", "3000"]
+CMD ["serve", "-s", "dist", "-l", "3000"]
