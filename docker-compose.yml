@@ -1,7 +1,0 @@
-services:
-   app:
-    build: .
-    container_name: marc-troesken
-    ports:
-     - 9926:80
-    restart: always
