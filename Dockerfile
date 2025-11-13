@@ -1,49 +1,57 @@
 # Multi-stage build für optimale Image-Größe
 
+############################
 # Build Stage
+############################
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files
+# Package-Dateien kopieren
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production=false
+# Dependencies installieren (inkl. Dev-Dependencies fürs Build)
+RUN npm ci
 
-# Copy source code
+# Source-Code kopieren
 COPY . .
 
-# Build the Nuxt application
+# React-App bauen (z. B. Create React App: erzeugt /build)
 RUN npm run build
 
+
+############################
 # Production Stage
+############################
 FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-# Create non-root user
+# Non-root User anlegen
 RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nuxtjs
+    adduser --system --uid 1001 reactjs
 
-# Copy built application from builder
-COPY --from=builder --chown=nuxtjs:nodejs /app/.output /app/.output
-COPY --from=builder --chown=nuxtjs:nodejs /app/package*.json /app/
+# Leichten Static-File-Server installieren
+RUN npm install -g serve
 
-# Set environment variables
+# Gebaute Dateien aus dem Builder übernehmen
+# Create React App: Output liegt in /app/build
+COPY --from=builder --chown=reactjs:nodejs /app/build /app/build
+
+# Umgebungsvariablen
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
 
-# Switch to non-root user
-USER nuxtjs
+# Non-root User verwenden
+USER reactjs
 
-# Expose port
+# Port freigeben
 EXPOSE 3000
 
-# Health check
+# Healthcheck (prüft, ob die App auf / erreichbar ist)
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD node -e "require('http').get('http://localhost:3000/', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
-# Start the application
-CMD ["node", ".output/server/index.mjs"]
+# App starten (serve: statischer Server für den Build-Ordner)
+CMD ["serve", "-s", "build", "-l", "3000"]
