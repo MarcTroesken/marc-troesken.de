@@ -1,5 +1,7 @@
-# Stage 1: Build the application
-FROM node:18-alpine AS builder
+# Multi-stage build für optimale Image-Größe
+
+# Build Stage
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -7,25 +9,41 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm ci --only=production=false
 
 # Copy source code
 COPY . .
 
-# Build the application
+# Build the Nuxt application
 RUN npm run build
 
-# Stage 2: Serve with nginx
-FROM nginx:alpine
+# Production Stage
+FROM node:20-alpine AS runner
 
-# Copy built assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+WORKDIR /app
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Create non-root user
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nuxtjs
 
-# Expose port 80
-EXPOSE 80
+# Copy built application from builder
+COPY --from=builder --chown=nuxtjs:nodejs /app/.output /app/.output
+COPY --from=builder --chown=nuxtjs:nodejs /app/package*.json /app/
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Set environment variables
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=3000
+
+# Switch to non-root user
+USER nuxtjs
+
+# Expose port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000/', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+
+# Start the application
+CMD ["node", ".output/server/index.mjs"]
