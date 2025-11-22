@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import meImage from "@/assets/me.jpg";
 
 const About = () => {
   return (
@@ -35,8 +36,8 @@ const About = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-accent/5 rounded-2xl blur-xl" />
             <Card className="relative p-8 bg-card/80 backdrop-blur-sm border-border/50">
               <div className="aspect-square rounded-xl overflow-hidden mb-6">
-                <img 
-                  src="https://marc-troesken.de/_nuxt/me.Bek20vFD.jpg" 
+                <img
+                  src={meImage}
                   alt="Marc Trösken"
                   className="w-full h-full object-cover"
                 />
