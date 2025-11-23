@@ -1,5 +1,4 @@
-import type { Config } from 'tailwindcss'
-
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     './components/**/*.{js,vue,ts}',
@@ -14,17 +13,15 @@ export default {
         primary: {
           DEFAULT: '#3B82F6',
           dark: '#1E40AF',
-          light: '#60A5FA',
         },
-        dark: {
-          DEFAULT: '#0F172A',
-          lighter: '#1E293B',
+        secondary: {
+          DEFAULT: '#FF6B35',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
   plugins: [],
-} satisfies Config
+}

@@ -1,57 +1,39 @@
-# Multi-stage build für optimale Image-Größe
-
-############################
-# Build Stage
-############################
+# Build stage
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Package-Dateien kopieren
+# Copy package files
 COPY package*.json ./
 
-# Dependencies installieren (inkl. Dev-Dependencies fürs Build)
+# Install dependencies
 RUN npm ci
 
-# Source-Code kopieren
+# Copy source code
 COPY . .
 
-# React-App bauen (z. B. Create React App: erzeugt /build)
+# Build the application
 RUN npm run build
 
-
-############################
-# Production Stage
-############################
-FROM node:20-alpine AS runner
+# Production stage
+FROM node:20-alpine
 
 WORKDIR /app
 
-# Non-root User anlegen
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 reactjs
+# Copy built application from builder
+COPY --from=builder /app/.output /app/.output
+COPY --from=builder /app/package*.json ./
 
-# Leichten Static-File-Server installieren
-RUN npm install -g serve
+# Install only production dependencies
+RUN npm ci --production
 
-# Gebaute Dateien aus dem Builder übernehmen
-# Create React App: Output liegt in /app/build
-COPY --from=builder --chown=reactjs:nodejs /app/dist /app/dist
-
-# Umgebungsvariablen
-ENV NODE_ENV=production
-ENV HOST=0.0.0.0
-ENV PORT=3000
-
-# Non-root User verwenden
-USER reactjs
-
-# Port freigeben
+# Expose port
 EXPOSE 3000
 
-# Healthcheck (prüft, ob die App auf / erreichbar ist)
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3000/', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+# Set environment variables
+ENV HOST=0.0.0.0
+ENV PORT=3000
+ENV NODE_ENV=production
 
-# App starten (serve: statischer Server für den Build-Ordner)
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# Start the application
+CMD ["node", ".output/server/index.mjs"]

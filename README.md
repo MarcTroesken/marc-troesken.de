@@ -1,73 +1,149 @@
-# Welcome to your Lovable project
+# Marc Trösken - Personal Website
 
-## Project info
+Modern personal website built with Nuxt 4 and Tailwind CSS, showcasing cloud engineering leadership and expertise.
 
-**URL**: https://lovable.dev/projects/564c39da-ab0b-40ff-8848-b0b4df48bc69
+## Features
 
-## How can I edit this code?
+- ⚡ Built with Nuxt 4 and Vue 3
+- 🎨 Styled with Tailwind CSS
+- 📱 Fully responsive design
+- 🐳 Docker ready
+- 🚀 GitHub Actions CI/CD
+- ♿ Accessible and SEO optimized
 
-There are several ways of editing your application.
+## Prerequisites
 
-**Use Lovable**
+- Node.js 20 or higher
+- npm or yarn
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/564c39da-ab0b-40ff-8848-b0b4df48bc69) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Development
 
-**Use your preferred IDE**
+1. Install dependencies:
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Start development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The site will be available at `http://localhost:3000`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build
 
-**Use GitHub Codespaces**
+Generate production build:
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Preview production build:
+```bash
+npm run preview
+```
 
-## What technologies are used for this project?
+## Docker
 
-This project is built with:
+### Build Docker Image
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+docker build -t marc-troesken-website .
+```
 
-## How can I deploy this project?
+### Run Docker Container
 
-Simply open [Lovable](https://lovable.dev/projects/564c39da-ab0b-40ff-8848-b0b4df48bc69) and click on Share -> Publish.
+```bash
+docker run -p 3000:3000 marc-troesken-website
+```
 
-## Can I connect a custom domain to my Lovable project?
+The site will be available at `http://localhost:3000`
 
-Yes, you can!
+## Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### GitHub Actions
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The project includes a GitHub Actions workflow that:
+- Builds the application on every push
+- Creates and pushes Docker images to GitHub Container Registry
+- Runs on main branch pushes
+
+To enable:
+1. Push code to GitHub
+2. Enable GitHub Actions in repository settings
+3. GitHub Packages will automatically receive Docker images
+
+### Manual Deployment
+
+1. Build Docker image:
+```bash
+docker build -t marc-troesken-website .
+```
+
+2. Tag for your registry:
+```bash
+docker tag marc-troesken-website your-registry/marc-troesken-website:latest
+```
+
+3. Push to registry:
+```bash
+docker push your-registry/marc-troesken-website:latest
+```
+
+## Project Structure
+
+```
+.
+├── .github/
+│   └── workflows/
+│       └── build-deploy.yml  # GitHub Actions workflow
+├── assets/
+│   └── css/
+│       └── main.css          # Global styles
+├── pages/
+│   └── index.vue             # Main page
+├── public/
+│   └── marc-troesken.jpg     # Profile photo
+├── app.vue                   # App entry point
+├── nuxt.config.ts            # Nuxt configuration
+├── tailwind.config.ts        # Tailwind configuration
+├── Dockerfile                # Docker configuration
+└── package.json              # Dependencies
+
+```
+
+## Customization
+
+### Update Content
+
+Edit `pages/index.vue` to update:
+- Career positions
+- Skills and competencies
+- Contact information
+- Social media links
+
+### Update Styling
+
+Modify `tailwind.config.ts` to customize:
+- Color scheme
+- Typography
+- Spacing
+- Breakpoints
+
+### Update Photo
+
+Replace `public/marc-troesken.jpg` with your own photo.
+
+## Tech Stack
+
+- **Framework**: Nuxt 4
+- **UI Library**: Vue 3
+- **Styling**: Tailwind CSS
+- **Icons**: Nuxt Icon
+- **Build Tool**: Vite
+- **Package Manager**: npm
+
+## License
+
+© 2025 Marc Trösken. All rights reserved.
