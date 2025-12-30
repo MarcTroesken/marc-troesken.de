@@ -1,13 +1,13 @@
 <template>
   <div>
-    <Navigation />
-    <HeroSection />
-    <CoreCompetencies />
-    <CareerTrajectory />
-    <CTASection />
-    <Footer />
+    <TheNavbar />
+    <main>
+      <HeroSection />
+      <MetricsBar />
+      <CompetenciesSection />
+      <CareerSection />
+      <CtaSection />
+    </main>
+    <TheFooter />
   </div>
 </template>
-
-<script setup lang="ts">
-</script>

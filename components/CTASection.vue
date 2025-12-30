@@ -1,29 +1,22 @@
 <template>
-  <section id="contact" class="py-20 md:py-32 bg-gray-900 text-white">
-    <div class="container-custom">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-          Available for Advisory & Leadership Roles
-        </h2>
-        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-          Interested in discussing cloud architecture, operational resilience, or engineering 
-          culture? I am always open to connecting with like-minded professionals.
-        </p>
-        <a 
-          href="https://linkedin.com/in/marc-troesken" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg"
-        >
-          Let's Connect
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      </div>
+  <section id="contact" class="py-32 px-8 lg:px-16 text-center relative overflow-hidden">
+    <!-- Background Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(201,162,39,0.1)_0%,transparent_60%)] pointer-events-none" />
+
+    <div class="relative z-10">
+      <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-6">
+        Available for <span class="text-accent italic">Advisory</span> & Leadership Roles
+      </h2>
+      <p class="text-lg text-text-secondary max-w-xl mx-auto leading-relaxed mb-10">
+        Interesse an Cloud Architecture, Operational Resilience oder Engineering Culture? 
+        Ich freue mich auf den Austausch mit gleichgesinnten Professionals.
+      </p>
+      <a href="https://linkedin.com/in/marc-troesken" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        Let's Connect
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M7 17L17 7M17 7H7M17 7V17"/>
+        </svg>
+      </a>
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-</script>

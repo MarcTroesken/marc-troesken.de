@@ -1,0 +1,6 @@
+# robots.txt for marc-troesken.de
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://marc-troesken.de/sitemap.xml

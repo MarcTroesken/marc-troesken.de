@@ -1,13 +1,3 @@
 <template>
-  <div>
-    <NuxtPage />
-  </div>
+  <NuxtPage />
 </template>
-
-<script setup lang="ts">
-useHead({
-  htmlAttrs: {
-    lang: 'de'
-  }
-})
-</script>

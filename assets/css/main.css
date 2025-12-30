@@ -1,25 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-sans antialiased bg-gray-50 text-gray-900;
-  }
-  
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1000;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm text-bg-primary transition-all duration-300;
+    background: linear-gradient(135deg, #c9a227 0%, #e8c547 50%, #c9a227 100%);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(201, 162, 39, 0.3);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-sm text-text-primary bg-transparent border border-border transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    @apply border-text-secondary bg-white/[0.03];
+  }
+
+  .nav-link {
+    @apply text-text-secondary text-sm font-medium tracking-wide transition-colors duration-300 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover {
+    @apply text-text-primary;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-2 text-accent text-xs font-semibold tracking-[0.15em] uppercase mb-6;
+  }
+
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight mb-4;
+  }
+
+  .competency-card {
+    @apply bg-bg-card border border-border rounded-[20px] p-8 transition-all duration-[400ms] relative overflow-hidden;
+  }
+
+  .competency-card::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-[3px] scale-x-0 origin-left transition-transform duration-[400ms];
+    background: linear-gradient(135deg, #c9a227 0%, #e8c547 50%, #c9a227 100%);
+  }
+
+  .competency-card:hover {
+    @apply border-border-hover -translate-y-1;
+  }
+
+  .competency-card:hover::before {
+    @apply scale-x-100;
+  }
+
+  .skill-bar {
+    @apply h-1.5 bg-border rounded-full overflow-hidden;
+  }
+
+  .skill-fill {
+    @apply h-full rounded-full transition-all duration-1000;
+    background: linear-gradient(135deg, #c9a227 0%, #e8c547 50%, #c9a227 100%);
+  }
+
+  .timeline-dot {
+    @apply absolute left-0 top-2 w-8 h-8 bg-bg-secondary border-2 border-accent rounded-full flex items-center justify-center;
+  }
+
+  .timeline-dot::after {
+    content: '';
+    @apply w-2.5 h-2.5 bg-accent rounded-full;
+  }
+
+  .timeline-dot.current {
+    @apply bg-accent;
+    box-shadow: 0 0 30px rgba(201, 162, 39, 0.4);
+  }
+
+  .timeline-dot.current::after {
+    @apply bg-bg-primary;
   }
 }
 
 @layer utilities {
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  .animation-delay-200 {
+    animation-delay: 0.2s;
   }
-  
-  .text-balance {
-    text-wrap: balance;
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+  }
+  .animation-delay-1400 {
+    animation-delay: 1.4s;
   }
 }

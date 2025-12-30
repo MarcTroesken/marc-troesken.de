@@ -1,149 +1,60 @@
 # Marc Trösken - Personal Website
 
-Modern personal website built with Nuxt 4 and Tailwind CSS, showcasing cloud engineering leadership and expertise.
+Cloud Engineering Leader Portfolio built with Nuxt 3 and Tailwind CSS.
 
-## Features
+## Setup
 
-- ⚡ Built with Nuxt 4 and Vue 3
-- 🎨 Styled with Tailwind CSS
-- 📱 Fully responsive design
-- 🐳 Docker ready
-- 🚀 GitHub Actions CI/CD
-- ♿ Accessible and SEO optimized
-
-## Prerequisites
-
-- Node.js 20 or higher
-- npm or yarn
-
-## Getting Started
-
-### Development
-
-1. Install dependencies:
 ```bash
+# Install dependencies
 npm install
-```
 
-2. Start development server:
-```bash
+# Development server (http://localhost:3000)
 npm run dev
-```
 
-The site will be available at `http://localhost:3000`
-
-### Build
-
-Generate production build:
-```bash
+# Build for production
 npm run build
-```
 
-Preview production build:
-```bash
+# Preview production build
 npm run preview
-```
 
-## Docker
-
-### Build Docker Image
-
-```bash
-docker build -t marc-troesken-website .
-```
-
-### Run Docker Container
-
-```bash
-docker run -p 3000:3000 marc-troesken-website
-```
-
-The site will be available at `http://localhost:3000`
-
-## Deployment
-
-### GitHub Actions
-
-The project includes a GitHub Actions workflow that:
-- Builds the application on every push
-- Creates and pushes Docker images to GitHub Container Registry
-- Runs on main branch pushes
-
-To enable:
-1. Push code to GitHub
-2. Enable GitHub Actions in repository settings
-3. GitHub Packages will automatically receive Docker images
-
-### Manual Deployment
-
-1. Build Docker image:
-```bash
-docker build -t marc-troesken-website .
-```
-
-2. Tag for your registry:
-```bash
-docker tag marc-troesken-website your-registry/marc-troesken-website:latest
-```
-
-3. Push to registry:
-```bash
-docker push your-registry/marc-troesken-website:latest
+# Generate static site
+npm run generate
 ```
 
 ## Project Structure
 
 ```
-.
-├── .github/
-│   └── workflows/
-│       └── build-deploy.yml  # GitHub Actions workflow
 ├── assets/
-│   └── css/
-│       └── main.css          # Global styles
+│   ├── css/
+│   │   └── main.css          # Tailwind + custom styles
+│   └── images/
+│       └── profile.jpg       # Profile image
+├── components/
+│   ├── TheNavbar.vue         # Navigation
+│   ├── HeroSection.vue       # Hero with profile
+│   ├── MetricsBar.vue        # Key metrics
+│   ├── CompetenciesSection.vue
+│   ├── CareerSection.vue     # Timeline + Skills
+│   ├── CtaSection.vue        # Call to action
+│   └── TheFooter.vue
 ├── pages/
 │   └── index.vue             # Main page
-├── public/
-│   └── marc-troesken.jpg     # Profile photo
-├── app.vue                   # App entry point
-├── nuxt.config.ts            # Nuxt configuration
-├── tailwind.config.ts        # Tailwind configuration
-├── Dockerfile                # Docker configuration
-└── package.json              # Dependencies
-
+├── nuxt.config.ts
+├── tailwind.config.ts
+└── package.json
 ```
 
-## Customization
+## Color Scheme
 
-### Update Content
+Current theme uses gold/copper accent (`#c9a227`) for a premium fintech aesthetic.
 
-Edit `pages/index.vue` to update:
-- Career positions
-- Skills and competencies
-- Contact information
-- Social media links
-
-### Update Styling
-
-Modify `tailwind.config.ts` to customize:
-- Color scheme
-- Typography
-- Spacing
-- Breakpoints
-
-### Update Photo
-
-Replace `public/marc-troesken.jpg` with your own photo.
+To change the accent color, update:
+1. `tailwind.config.ts` - accent color values
+2. `assets/css/main.css` - gradient and shadow colors
 
 ## Tech Stack
 
-- **Framework**: Nuxt 4
-- **UI Library**: Vue 3
-- **Styling**: Tailwind CSS
-- **Icons**: Nuxt Icon
-- **Build Tool**: Vite
-- **Package Manager**: npm
-
-## License
-
-© 2025 Marc Trösken. All rights reserved.
+- **Framework:** Nuxt 3
+- **Styling:** Tailwind CSS
+- **Fonts:** Instrument Serif, Space Grotesk, Syne (via @nuxtjs/google-fonts)
+- **Animations:** CSS animations with Tailwind utilities
