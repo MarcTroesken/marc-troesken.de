@@ -1,23 +1,21 @@
 <script setup lang="ts">
-const skills = [
-  { name: 'Cloud Architecture (AWS)', value: 98 },
-  { name: 'Team Leadership', value: 100 },
-  { name: 'Terraform', value: 85 },
-  { name: 'Security & Compliance', value: 90 },
-  { name: 'System Design', value: 92 },
-  { name: 'Full-Stack (Vue/Node)', value: 85 },
+const focusAreas = [
+  { area: 'Cloud Platform', details: 'AWS, Terraform, GitOps' },
+  { area: 'Engineering Leadership', details: 'Team Building, Mentoring' },
+  { area: 'Security & Operations', details: 'IAM, Observability, Incident Response' },
+  { area: 'Regulated Environments', details: 'Banking, Payments, Audit Readiness' },
 ]
 
 const timeline = [
   {
-    date: '2024 – Heute',
+    date: '2024 – Present',
     role: 'Expertise Lead – Cloud Engineering',
     company: 'DKB Service GmbH, Berlin',
     current: true,
     achievements: [
-      'Leitung eines Cloud Engineering Teams mit 20 Professionals',
-      'Gestaltung der Zukunft durch strategische Chapter-Projekte',
-      'Entwicklung von Engineers in Senior-Rollen',
+      'Leading a Cloud Engineering team of 20+ professionals',
+      'Driving strategic chapter initiatives and platform evolution',
+      'Growing engineers into senior technical roles',
     ],
   },
   {
@@ -26,10 +24,10 @@ const timeline = [
     company: 'Ratepay GmbH, Berlin',
     current: false,
     achievements: [
-      'Co-Lead der Cloud Journey von Ratepay',
-      'Spearheaded Migration von On-Premise zu nativen AWS Cloud Services',
-      'Implementierung von Zero-Trust Security Architektur für ZAIT Compliance',
-      'Mentoring von Senior Developers in QA, On-Premise und Cloud Infrastructure',
+      'Co-led the company-wide cloud transformation journey',
+      'Migrated on-premise workloads to native AWS services',
+      'Implemented Zero-Trust architecture for regulatory compliance',
+      'Mentored senior developers across QA and infrastructure',
     ],
   },
   {
@@ -38,8 +36,8 @@ const timeline = [
     company: 'Ratepay GmbH, Berlin',
     current: false,
     achievements: [
-      'Aufbau hochperformanter und sicherer Cloud-Infrastruktur auf AWS',
-      'Start des unternehmensweiten Cloud-Migrationsprojekts',
+      'Designed secure, high-performance cloud infrastructure on AWS',
+      'Initiated the enterprise-wide cloud migration program',
     ],
   },
   {
@@ -48,8 +46,8 @@ const timeline = [
     company: 'Ratepay GmbH, Berlin',
     current: false,
     achievements: [
-      'Expertise in Terraform und Infrastructure as Code',
-      'Grundstein für Cloud-Transformation gelegt',
+      'Built expertise in Terraform and Infrastructure as Code',
+      'Laid the foundation for cloud transformation',
     ],
   },
 ]
@@ -58,29 +56,24 @@ const timeline = [
 <template>
   <section id="career" class="py-32 px-8 lg:px-16 bg-bg-secondary">
     <div class="text-center mb-20">
-      <div class="section-tag">Career Trajectory</div>
-      <h2 class="section-title">Beruflicher Werdegang</h2>
+      <div class="section-tag">Experience</div>
+      <h2 class="section-title">Career Path</h2>
       <p class="text-lg text-text-secondary max-w-2xl mx-auto">
-        Vom Hands-on Coding zur strategischen Führung — geprägt durch das Lösen komplexer Probleme in kritischen Umgebungen.
+        From hands-on engineering to strategic leadership — shaped by solving complex problems in critical environments.
       </p>
     </div>
 
     <div class="grid lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24">
-      <!-- Skills Panel -->
+      <!-- Focus Areas Panel -->
       <div class="lg:sticky lg:top-32 h-fit">
         <div class="bg-bg-card border border-border rounded-3xl p-8">
           <h3 class="font-display text-xs font-semibold tracking-[0.15em] uppercase text-text-muted mb-8">
-            Technical Proficiency
+            Focus Areas
           </h3>
           <div class="space-y-6">
-            <div v-for="skill in skills" :key="skill.name" class="space-y-2">
-              <div class="flex justify-between">
-                <span class="text-sm font-medium">{{ skill.name }}</span>
-                <span class="text-sm text-accent font-semibold">{{ skill.value }}%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-fill" :style="{ width: `${skill.value}%` }" />
-              </div>
+            <div v-for="item in focusAreas" :key="item.area" class="border-b border-border pb-4 last:border-0 last:pb-0">
+              <div class="font-medium text-text-primary mb-1">{{ item.area }}</div>
+              <div class="text-sm text-text-secondary">{{ item.details }}</div>
             </div>
           </div>
         </div>
@@ -92,23 +85,23 @@ const timeline = [
         <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent to-border" />
 
         <div class="space-y-16">
-          <div 
-            v-for="item in timeline" 
+          <div
+            v-for="item in timeline"
             :key="item.date"
             class="relative pl-16"
           >
             <div class="timeline-dot" :class="{ current: item.current }" />
-            
+
             <span class="inline-block bg-accent-subtle text-accent text-xs font-semibold tracking-wide px-3 py-1.5 rounded-full mb-4">
               {{ item.date }}
             </span>
-            
+
             <h3 class="font-serif text-2xl lg:text-3xl font-normal mb-2">{{ item.role }}</h3>
             <p class="text-text-secondary mb-5">{{ item.company }}</p>
-            
+
             <ul class="space-y-3">
-              <li 
-                v-for="achievement in item.achievements" 
+              <li
+                v-for="achievement in item.achievements"
                 :key="achievement"
                 class="relative pl-6 text-text-secondary leading-relaxed"
               >

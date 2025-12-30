@@ -3,8 +3,8 @@ import { ref } from 'vue'
 
 const navLinks = [
   { href: '#expertise', label: 'Expertise' },
-  { href: '#career', label: 'Karriere' },
-  { href: '#contact', label: 'Kontakt' },
+  { href: '#career', label: 'Career' },
+  { href: '#contact', label: 'Contact' },
 ]
 
 const isMenuOpen = ref(false)
@@ -47,7 +47,7 @@ const closeMenu = () => {
       <button
         type="button"
         class="md:hidden p-2 text-text-primary"
-        aria-label="Menü öffnen"
+        aria-label="Open menu"
         @click="toggleMenu"
       >
         <svg v-if="!isMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

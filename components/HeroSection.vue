@@ -3,8 +3,7 @@ import profileImage from '~/assets/images/profile.jpg'
 
 const stats = [
   { value: '20+', label: 'Engineers' },
-  { value: '4+', label: 'Jahre Cloud' },
-  { value: 'AWS', label: 'Certified' },
+  { value: '4+', label: 'Years Cloud' },
 ]
 </script>
 
@@ -17,7 +16,7 @@ const stats = [
     <div class="flex flex-col justify-center z-10 text-center lg:text-left">
       <div class="section-tag opacity-0 animate-fade-up animation-delay-200">
         <span class="w-2 h-2 bg-accent rounded-full animate-pulse-dot" />
-        Leadership & Cloud Engineering
+        Cloud Platform Leadership
       </div>
 
       <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.05] tracking-tight mb-8 opacity-0 animate-fade-up animation-delay-400">
@@ -27,12 +26,12 @@ const stats = [
       </h1>
 
       <p class="text-lg text-text-secondary max-w-lg leading-relaxed mb-12 opacity-0 animate-fade-up animation-delay-600 mx-auto lg:mx-0">
-        Cloud Engineering Leader im Fintech-Sektor. Vom Full-Stack Developer zum Expertise Lead — ich führe Teams, die skalierbare und sichere Cloud-Infrastrukturen entwickeln.
+        I build and lead cloud platform teams in regulated fintech environments — focused on secure standards, fast delivery, and operational excellence.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up animation-delay-800 justify-center lg:justify-start">
         <a href="#career" class="btn-primary">
-          Erfahrung ansehen
+          View Experience
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M7 17L17 7M17 7H7M17 7V17"/>
           </svg>
@@ -53,7 +52,7 @@ const stats = [
           <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-primary/90 z-10" />
           <img
             :src="profileImage"
-            alt="Marc Trösken - Cloud Engineering Leader und Expertise Lead bei DKB Service GmbH in Berlin"
+            alt="Marc Troesken - Cloud Engineering Leader and Expertise Lead at DKB Service GmbH in Berlin"
             width="420"
             height="520"
             loading="eager"
@@ -70,15 +69,15 @@ const stats = [
             </svg>
           </div>
           <div>
-            <div class="text-xs text-text-muted tracking-wide uppercase">Current Focus</div>
+            <div class="text-xs text-text-muted tracking-wide uppercase">Current Role</div>
             <div class="font-semibold text-sm">Expertise Lead @ DKB</div>
           </div>
         </div>
 
         <!-- Floating Stats -->
         <div class="hidden lg:flex absolute top-12 -right-8 flex-col gap-4">
-          <div 
-            v-for="(stat, index) in stats" 
+          <div
+            v-for="(stat, index) in stats"
             :key="stat.label"
             class="bg-bg-card/90 backdrop-blur-xl border border-border rounded-full px-5 py-3 flex items-center gap-3 opacity-0 animate-slide-in"
             :class="`animation-delay-${1000 + index * 200}`"

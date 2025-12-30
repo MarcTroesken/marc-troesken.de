@@ -29,25 +29,25 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Marc Trösken ist Cloud Engineering Leader im Fintech-Sektor. Als Expertise Lead bei DKB Service GmbH führt er Teams für skalierbare Cloud-Infrastrukturen in Berlin.' },
-        { name: 'author', content: 'Marc Trösken' },
+        { name: 'description', content: 'Marc Troesken is a Cloud Engineering Leader in Fintech. As Expertise Lead at DKB Service GmbH, he builds and leads teams for scalable cloud infrastructure in Berlin.' },
+        { name: 'author', content: 'Marc Troesken' },
         { name: 'robots', content: 'index, follow' },
         { name: 'googlebot', content: 'index, follow' },
-        { name: 'keywords', content: 'Cloud Engineering, AWS, Fintech, Berlin, DKB, Engineering Leadership, Infrastructure as Code, Terraform, Cloud Architecture' },
+        { name: 'keywords', content: 'Cloud Engineering, AWS, Fintech, Berlin, DKB, Engineering Leadership, Infrastructure as Code, Terraform, Cloud Architecture, Platform Engineering' },
         // Open Graph
         { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: 'Marc Trösken' },
-        { property: 'og:title', content: 'Marc Trösken — Cloud Engineering Leader' },
-        { property: 'og:description', content: 'Cloud Engineering Leader im Fintech-Sektor. Expertise Lead bei DKB Service GmbH mit Fokus auf skalierbare Cloud-Infrastrukturen.' },
+        { property: 'og:site_name', content: 'Marc Troesken' },
+        { property: 'og:title', content: 'Marc Troesken — Cloud Engineering Leader' },
+        { property: 'og:description', content: 'Cloud Engineering Leader in Fintech. Building and leading platform teams for scalable cloud infrastructure at DKB Service GmbH.' },
         { property: 'og:url', content: 'https://marc-troesken.de' },
         { property: 'og:image', content: 'https://marc-troesken.de/og-image.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
-        { property: 'og:locale', content: 'de_DE' },
+        { property: 'og:locale', content: 'en_US' },
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Marc Trösken — Cloud Engineering Leader' },
-        { name: 'twitter:description', content: 'Cloud Engineering Leader im Fintech-Sektor. Expertise Lead bei DKB Service GmbH.' },
+        { name: 'twitter:title', content: 'Marc Troesken — Cloud Engineering Leader' },
+        { name: 'twitter:description', content: 'Cloud Engineering Leader in Fintech. Expertise Lead at DKB Service GmbH.' },
         { name: 'twitter:image', content: 'https://marc-troesken.de/og-image.jpg' },
       ],
       link: [
@@ -57,7 +57,7 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       ],
       htmlAttrs: {
-        lang: 'de',
+        lang: 'en',
       },
       script: [
         {

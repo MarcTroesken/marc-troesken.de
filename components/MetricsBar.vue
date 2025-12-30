@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const metrics = [
-  { value: '20', suffix: '+', label: 'Cloud Engineers im Team' },
-  { value: '4', suffix: '+', label: 'Jahre Cloud Infrastructure' },
-  { value: '99.99', suffix: '%', label: 'System Uptime' },
-  { value: 'ZAIT', suffix: '', label: 'Compliant Architecture' },
+  { value: '20', suffix: '+', label: 'Engineers Led' },
+  { value: '4', suffix: '+', label: 'Years in Cloud' },
+  { value: '2', suffix: '', label: 'Cloud Migrations' },
+  { value: 'Fintech', suffix: '', label: 'Industry Focus' },
 ]
 </script>
 

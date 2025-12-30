@@ -2,23 +2,23 @@
 const competencies = [
   {
     icon: 'cloud',
-    title: 'Cloud Strategy',
-    description: 'Definition von Roadmaps für skalierbare, kosteneffiziente Cloud-Adoption in regulierten Umgebungen.',
+    title: 'Cloud Platform',
+    description: 'Building scalable, cost-effective cloud infrastructure on AWS with focus on self-service and developer experience.',
   },
   {
     icon: 'tool',
     title: 'Infrastructure as Code',
-    description: 'Automatisierung zuverlässiger Umgebungen mit Terraform, Ansible und modernen GitOps-Workflows.',
+    description: 'Standardized, auditable infrastructure with Terraform and GitOps. Enabling teams through reusable modules and guardrails.',
   },
   {
     icon: 'shield',
-    title: 'Security & Compliance',
-    description: 'Banking-Grade Security Postures mit ZAIT, PCI-DSS und SOC2 Compliance im Fokus.',
+    title: 'Security & Operations',
+    description: 'IAM, network segmentation, and policy-as-code for regulated environments. Building for audit readiness from day one.',
   },
   {
     icon: 'users',
     title: 'Engineering Leadership',
-    description: 'Aufbau und Mentoring von High-Performance Engineering Teams mit Fokus auf kontinuierliche Entwicklung.',
+    description: 'Growing high-performance teams through empowerment, clear guardrails, and continuous learning culture.',
   },
 ]
 </script>
@@ -27,9 +27,9 @@ const competencies = [
   <section id="expertise" class="py-32 px-8 lg:px-16 relative">
     <div class="text-center mb-20">
       <div class="section-tag">Core Competencies</div>
-      <h2 class="section-title">Expertise & Fokus</h2>
+      <h2 class="section-title">Expertise & Focus</h2>
       <p class="text-lg text-text-secondary max-w-xl mx-auto">
-        Die Brücke zwischen komplexen Finanzanforderungen und moderner Cloud-Technologie.
+        Bridging complex financial requirements with modern cloud technology.
       </p>
     </div>
 

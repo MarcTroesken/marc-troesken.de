@@ -8,8 +8,8 @@
         Available for <span class="text-accent italic">Advisory</span> & Leadership Roles
       </h2>
       <p class="text-lg text-text-secondary max-w-xl mx-auto leading-relaxed mb-10">
-        Interesse an Cloud Architecture, Operational Resilience oder Engineering Culture? 
-        Ich freue mich auf den Austausch mit gleichgesinnten Professionals.
+        Interested in cloud architecture, operational resilience, or engineering culture?
+        I'm always open to connecting with like-minded professionals.
       </p>
       <a href="https://linkedin.com/in/marc-troesken" target="_blank" rel="noopener noreferrer" class="btn-primary">
         Let's Connect
