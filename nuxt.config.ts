@@ -25,7 +25,6 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    siteUrl,
     zeroRuntime: isProd,
   },
 
