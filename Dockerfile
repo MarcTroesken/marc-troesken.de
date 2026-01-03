@@ -20,20 +20,18 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy built application from builder
-COPY --from=builder /app/.output /app/.output
-COPY --from=builder /app/package*.json ./
-
-# Install only production dependencies
-RUN npm ci --production
+# Copy built application from builder (includes runtime node_modules under .output/server)
+COPY --from=builder --chown=node:node /app/.output /app/.output
 
 # Expose port
 EXPOSE 3000
 
 # Set environment variables
-ENV HOST=0.0.0.0
-ENV PORT=3000
 ENV NODE_ENV=production
+ENV NITRO_HOST=0.0.0.0
+ENV NITRO_PORT=3000
+ENV PORT=3000
 
 # Start the application
+USER node
 CMD ["node", ".output/server/index.mjs"]
