@@ -1,7 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const siteUrl = 'https://marc-troesken.de'
+const isProd = process.env.NODE_ENV === 'production'
+const securityHeaders: Record<string, string> = {
+  ...(isProd ? { 'Strict-Transport-Security': 'max-age=15552000; includeSubDomains' } : {}),
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+}
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
+  devtools: { enabled: !isProd },
 
   modules: [
     '@nuxtjs/tailwindcss',
@@ -9,8 +19,14 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
   ],
 
+  site: {
+    url: siteUrl,
+    name: 'Marc Troesken',
+  },
+
   sitemap: {
-    siteUrl: 'https://marc-troesken.de',
+    siteUrl,
+    zeroRuntime: isProd,
   },
 
   googleFonts: {
@@ -20,6 +36,53 @@ export default defineNuxtConfig({
       'Syne': [400, 500, 600, 700, 800],
     },
     display: 'swap',
+  },
+
+  nitro: {
+    prerender: {
+      routes: isProd ? ['/sitemap.xml', '/sitemap_index.xml'] : [],
+    },
+    routeRules: {
+      '/**': {
+        headers: securityHeaders,
+      },
+      '/_nuxt/**': {
+        headers: {
+          ...securityHeaders,
+          'Cache-Control': 'public, max-age=31536000, immutable',
+        },
+      },
+      '/favicon*': {
+        headers: {
+          ...securityHeaders,
+          'Cache-Control': 'public, max-age=31536000, immutable',
+        },
+      },
+      '/apple-touch-icon.png': {
+        headers: {
+          ...securityHeaders,
+          'Cache-Control': 'public, max-age=31536000, immutable',
+        },
+      },
+      '/sitemap*.xml': {
+        headers: {
+          ...securityHeaders,
+          'Cache-Control': 'public, max-age=3600',
+        },
+      },
+      '/__sitemap__/**': {
+        headers: {
+          ...securityHeaders,
+          'Cache-Control': 'public, max-age=3600',
+        },
+      },
+      '/robots.txt': {
+        headers: {
+          ...securityHeaders,
+          'Cache-Control': 'public, max-age=3600',
+        },
+      },
+    },
   },
 
   app: {
@@ -39,8 +102,8 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'Marc Troesken' },
         { property: 'og:title', content: 'Marc Troesken — Cloud Engineering Leader' },
         { property: 'og:description', content: 'Cloud Engineering Leader in Fintech. Building and leading platform teams for scalable cloud infrastructure at DKB Service GmbH.' },
-        { property: 'og:url', content: 'https://marc-troesken.de' },
-        { property: 'og:image', content: 'https://marc-troesken.de/og-image.jpg' },
+        { property: 'og:url', content: siteUrl },
+        { property: 'og:image', content: `${siteUrl}/og-image.jpg` },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         { property: 'og:locale', content: 'en_US' },
@@ -48,10 +111,10 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Marc Troesken — Cloud Engineering Leader' },
         { name: 'twitter:description', content: 'Cloud Engineering Leader in Fintech. Expertise Lead at DKB Service GmbH.' },
-        { name: 'twitter:image', content: 'https://marc-troesken.de/og-image.jpg' },
+        { name: 'twitter:image', content: `${siteUrl}/og-image.jpg` },
       ],
       link: [
-        { rel: 'canonical', href: 'https://marc-troesken.de' },
+        { rel: 'canonical', href: siteUrl },
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
@@ -66,7 +129,7 @@ export default defineNuxtConfig({
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Marc Trösken',
-            url: 'https://marc-troesken.de',
+            url: siteUrl,
             jobTitle: 'Expertise Lead - Cloud Engineering',
             worksFor: {
               '@type': 'Organization',
