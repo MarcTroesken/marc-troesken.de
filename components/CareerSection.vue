@@ -85,14 +85,14 @@ const timeline = [
         <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent to-border" />
 
         <div class="space-y-16">
-          <div
+          <article
             v-for="item in timeline"
             :key="item.date"
             class="relative pl-16"
           >
             <div class="timeline-dot" :class="{ current: item.current }" />
 
-            <span class="inline-block bg-accent-subtle text-accent text-xs font-semibold tracking-wide px-3 py-1.5 rounded-full mb-4">
+            <span class="inline-block bg-accent-subtle text-text-primary text-xs font-semibold tracking-wide px-3 py-1.5 rounded-full mb-4">
               {{ item.date }}
             </span>
 
@@ -109,7 +109,7 @@ const timeline = [
                 {{ achievement }}
               </li>
             </ul>
-          </div>
+          </article>
         </div>
       </div>
     </div>

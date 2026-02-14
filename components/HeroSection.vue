@@ -8,7 +8,7 @@ const stats = [
 </script>
 
 <template>
-  <section class="min-h-screen grid lg:grid-cols-2 px-8 lg:px-16 pt-32 pb-16 gap-16 relative overflow-hidden">
+  <section class="min-h-[calc(100svh-80px)] grid lg:grid-cols-2 px-8 lg:px-16 pt-24 pb-8 lg:pt-28 lg:pb-12 gap-8 lg:gap-16 relative overflow-hidden">
     <!-- Background Glow -->
     <div class="absolute -top-1/2 -right-1/5 w-4/5 h-[150%] bg-[radial-gradient(ellipse_at_center,rgba(201,162,39,0.08)_0%,transparent_60%)] pointer-events-none" />
 
@@ -20,12 +20,12 @@ const stats = [
       </div>
 
       <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.05] tracking-tight mb-8 opacity-0 animate-fade-up animation-delay-400">
-        Building the<br>
-        Backbone of<br>
-        <span class="text-accent italic">Finance</span>
+        Cloud Engineering<br>
+        Leadership for<br>
+        <span class="text-accent italic">Fintech</span>
       </h1>
 
-      <p class="text-lg text-text-secondary max-w-lg leading-relaxed mb-12 opacity-0 animate-fade-up animation-delay-600 mx-auto lg:mx-0">
+      <p class="text-lg text-text-secondary max-w-lg leading-relaxed mb-8 lg:mb-12 opacity-0 animate-fade-up animation-delay-600 mx-auto lg:mx-0">
         I build and lead cloud platform teams in regulated fintech environments — focused on secure standards, fast delivery, and operational excellence.
       </p>
 
@@ -48,7 +48,7 @@ const stats = [
     <!-- Visual -->
     <div class="flex items-center justify-center z-10 order-first lg:order-last">
       <div class="relative opacity-0 animate-fade-scale animation-delay-600">
-        <div class="relative w-[300px] lg:w-[420px] h-[380px] lg:h-[520px] rounded-[240px_240px_24px_24px] overflow-hidden border border-border">
+        <div class="relative w-[240px] lg:w-[420px] h-[300px] lg:h-[520px] rounded-[240px_240px_24px_24px] overflow-hidden border border-border">
           <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-primary/90 z-10" />
           <img
             :src="profileImage"
@@ -56,6 +56,7 @@ const stats = [
             width="420"
             height="520"
             loading="eager"
+            fetchpriority="high"
             class="w-full h-full object-cover object-top grayscale-[20%]"
           >
         </div>

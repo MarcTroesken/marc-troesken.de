@@ -1,6 +1,6 @@
 # Marc Trösken - Personal Website
 
-Cloud Engineering Leader Portfolio built with Nuxt 3 and Tailwind CSS.
+Cloud Engineering Leader Portfolio built with Nuxt 4 and Tailwind CSS.
 
 ## Setup
 
@@ -35,7 +35,7 @@ npm run generate
 │   ├── MetricsBar.vue        # Key metrics
 │   ├── CompetenciesSection.vue
 │   ├── CareerSection.vue     # Timeline + Skills
-│   ├── CtaSection.vue        # Call to action
+│   ├── CTASection.vue        # Call to action
 │   └── TheFooter.vue
 ├── pages/
 │   └── index.vue             # Main page
@@ -54,7 +54,7 @@ To change the accent color, update:
 
 ## Tech Stack
 
-- **Framework:** Nuxt 3
+- **Framework:** Nuxt 4
 - **Styling:** Tailwind CSS
 - **Fonts:** Instrument Serif, Space Grotesk, Syne (via @nuxtjs/google-fonts)
 - **Animations:** CSS animations with Tailwind utilities
