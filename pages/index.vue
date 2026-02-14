@@ -1,6 +1,7 @@
 <script setup lang="ts">
 useHead({
-  titleTemplate: '',
+  title: 'Marc Troesken — Cloud Engineering Leader in Fintech | Berlin',
+  titleTemplate: null,
 })
 </script>
 
