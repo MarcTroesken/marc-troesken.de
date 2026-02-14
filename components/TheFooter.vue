@@ -23,6 +23,12 @@ const socialLinks = [
       >
         {{ link.label }}
       </a>
+      <NuxtLink
+        to="/impressum"
+        class="text-sm text-text-secondary hover:text-accent transition-colors duration-300"
+      >
+        Impressum
+      </NuxtLink>
     </div>
   </footer>
 </template>

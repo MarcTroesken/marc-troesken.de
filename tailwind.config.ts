@@ -21,7 +21,7 @@ export default {
         },
         'text-primary': '#fafafa',
         'text-secondary': '#888888',
-        'text-muted': '#555555',
+        'text-muted': '#9a9a9a',
         'border': {
           DEFAULT: 'rgba(255, 255, 255, 0.08)',
           hover: 'rgba(255, 255, 255, 0.15)',

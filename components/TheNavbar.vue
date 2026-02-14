@@ -19,7 +19,8 @@ const closeMenu = () => {
 </script>
 
 <template>
-  <nav class="fixed top-0 left-0 right-0 z-50 px-8 lg:px-16 py-6 flex justify-between items-center bg-bg-primary/80 backdrop-blur-xl border-b border-border transition-all duration-300">
+  <header class="fixed top-0 left-0 right-0 z-50">
+  <nav class="px-8 lg:px-16 py-6 flex justify-between items-center bg-bg-primary/80 backdrop-blur-xl border-b border-border transition-all duration-300">
     <div class="flex items-center gap-3 font-display font-bold text-xl tracking-tight">
       <div class="w-9 h-9 bg-gradient-gold rounded-lg flex items-center justify-center font-extrabold text-bg-primary text-sm">
         MT
@@ -48,6 +49,8 @@ const closeMenu = () => {
         type="button"
         class="md:hidden p-2 text-text-primary"
         aria-label="Open menu"
+        aria-controls="mobile-menu"
+        :aria-expanded="isMenuOpen"
         @click="toggleMenu"
       >
         <svg v-if="!isMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,9 +62,11 @@ const closeMenu = () => {
       </button>
     </div>
   </nav>
+  </header>
 
   <div
     v-if="isMenuOpen"
+    id="mobile-menu"
     class="fixed inset-0 z-40 bg-bg-primary/95 backdrop-blur-xl pt-24 px-8 md:hidden"
   >
     <ul class="flex flex-col gap-6">
