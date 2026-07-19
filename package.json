@@ -2,6 +2,9 @@
   "name": "marc-troesken-website",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "^22.19.0 || ^24.11.0 || >=26.0.0"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -13,14 +16,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxtjs/sitemap": "^7.6.0",
-    "nuxt": "^4.3.1",
-    "vue": "^3.5.28"
+    "@nuxtjs/sitemap": "^8.2.3",
+    "nuxt": "^4.5.0",
+    "vue": "^3.5.40"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "@types/node": "^25.2.3",
-    "typescript": "^5.6.0"
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@types/node": "^26.1.1",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.7"
   }
 }
